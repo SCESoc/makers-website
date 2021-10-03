@@ -1,36 +1,29 @@
 {
-  "name": "makers-website",
-  "description": "TODO",
+  "name": "my-app1",
   "version": "0.0.1",
   "scripts": {
-    "dev": "sapper dev --no-hot",
-    "build": "sapper build",
-    "export": "sapper export",
-    "start": "node __sapper__/build",
-    "validate": "svelte-check --ignore src/node_modules/@sapper"
-  },
-  "dependencies": {
-    "compression": "^1.7.1",
-    "express": "^4.17.1",
-    "polka": "next",
-    "sirv": "^1.0.0"
+    "dev": "svelte-kit dev",
+    "build": "svelte-kit build",
+    "preview": "svelte-kit preview",
+    "check": "svelte-check --tsconfig ./tsconfig.json",
+    "check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
+    "lint": "prettier --ignore-path .gitignore --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
+    "format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. ."
   },
   "devDependencies": {
-    "@tsconfig/svelte": "^1.0.10",
-    "@types/compression": "^1.7.0",
-    "@types/express": "^4.17.13",
-    "@types/node": "^14.11.1",
-    "@types/polka": "^0.5.1",
-    "file-loader": "^6.0.0",
-    "sapper": "^0.28.0",
-    "svelte": "^3.17.3",
-    "svelte-check": "^1.0.46",
-    "svelte-loader": "^3.0.0",
-    "svelte-preprocess": "^4.3.0",
-    "ts-loader": "^8.0.4",
-    "tslib": "^2.0.1",
-    "typescript": "^4.0.3",
-    "webpack": "^4.46.0",
-    "webpack-modules": "^1.0.0"
-  }
+    "@sveltejs/kit": "next",
+    "@typescript-eslint/eslint-plugin": "^4.31.1",
+    "@typescript-eslint/parser": "^4.31.1",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-svelte3": "^3.2.1",
+    "prettier": "^2.4.1",
+    "prettier-plugin-svelte": "^2.4.0",
+    "svelte": "^3.42.6",
+    "svelte-check": "^2.2.6",
+    "svelte-preprocess": "^4.9.4",
+    "tslib": "^2.3.1",
+    "typescript": "^4.4.3"
+  },
+  "type": "module"
 }
