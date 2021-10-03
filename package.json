@@ -36,5 +36,9 @@
 			"npm run check",
 			"npm run lint:fix"
 		]
+	},
+	"dependencies": {
+		"@fontsource/fira-mono": "^4.5.0",
+		"@fontsource/inter": "^4.5.0"
 	}
 }
