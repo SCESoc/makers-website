@@ -11,9 +11,9 @@
 
 <footer>
 	<div class="footer-links">
-		<a href="https://www.scesoc.ca/">SCESoc</a>
-		<a href="https://www.scesoc.ca/discord">Discord</a>
-		<a href="https://github.com/SCESoc">Github</a>
+		<a target="_blank" href="https://www.scesoc.ca/">SCESoc</a>
+		<a target="_blank" href="https://www.scesoc.ca/discord">Discord</a>
+		<a target="_blank" href="https://github.com/SCESoc">Github</a>
 	</div>
 </footer>
 

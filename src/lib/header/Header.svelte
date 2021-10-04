@@ -1,13 +1,16 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import logo from './logo.svg';
+	let innerWidth;
 </script>
+
+<svelte:window bind:innerWidth />
 
 <header>
 	<div class="corner">
 		<a href="/">
 			<!-- <img src={logo} alt="SCESoc" /> -->
-			<span class="logo">Makers Club</span>
+			<span class="logo">Makers<br />Club.</span>
 		</a>
 	</div>
 
@@ -24,9 +27,11 @@
 	</nav>
 
 	<div class="corner">
-		<a href="/">
+		<a target="_blank" href="/">
 			<img src={logo} alt="SCESoc" />
-			<span class="logo">SCESoc</span>
+			{#if innerWidth > 480}
+				<span class="logo">SCESoc</span>
+			{/if}
 		</a>
 	</div>
 </header>
@@ -39,7 +44,7 @@
 
 	.corner {
 		height: 3em;
-		padding: 1em 3em 0em 3em;
+		padding: 0.5em 1em 0em 1em;
 	}
 
 	.corner a {
@@ -57,7 +62,7 @@
 	}
 
 	.logo {
-		font-size: 1.25em;
+		font-size: 1em;
 		font-weight: bold;
 		color: var(--heading-color);
 	}
@@ -128,5 +133,15 @@
 
 	a:hover {
 		color: var(--accent-color);
+	}
+
+	@media (min-width: 480px) {
+		.corner {
+			padding: 1em 3em 0em 3em;
+		}
+
+		.logo {
+			font-size: 1.25em;
+		}
 	}
 </style>
