@@ -5,6 +5,7 @@
 		"dev": "svelte-kit dev",
 		"build": "svelte-kit build",
 		"preview": "svelte-kit preview",
+		"deploy": "node ./gh-pages.js",
 		"check": "svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "eslint --ignore-path .gitignore './src/**/*.{js,ts,svelte}'",
@@ -14,12 +15,14 @@
 		"prepare": "husky install"
 	},
 	"devDependencies": {
+		"@sveltejs/adapter-static": "^1.0.0-next.20",
 		"@sveltejs/kit": "next",
 		"@typescript-eslint/eslint-plugin": "^4.31.1",
 		"@typescript-eslint/parser": "^4.31.1",
 		"eslint": "^7.32.0",
 		"eslint-config-prettier": "^8.3.0",
 		"eslint-plugin-svelte3": "^3.2.1",
+		"gh-pages": "^3.2.3",
 		"husky": "^7.0.2",
 		"lint-staged": "^11.1.2",
 		"prettier": "^2.4.1",
