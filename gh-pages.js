@@ -3,7 +3,7 @@ import { publish } from 'gh-pages';
 publish(
 	'build', // path to public directory
 	{
-		branch: 'main',
+		branch: 'gh-pages',
 		repo: 'https://github.com/SCESoc/makers-website.git', // Update to point to your repository
 		user: {
 			name: 'Dharshatharan Jayatharan Aronan', // update to use your name
