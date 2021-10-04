@@ -10,9 +10,6 @@ const config = {
 	kit: {
 		// hydrate the <div id="svelte"> element in src/app.html
 		target: '#svelte',
-		paths: {
-			base: '/makers-website',
-		},
 		adapter: adapter({
 			pages: 'build',
 			assets: 'build',

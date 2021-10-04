@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import logo from './logo.svg';
+	import SCESocLogo from './SCESocLogo.svg';
 	let innerWidth;
 </script>
 
@@ -9,7 +9,6 @@
 <header>
 	<div class="corner">
 		<a href="/">
-			<!-- <img src={logo} alt="SCESoc" /> -->
 			<span class="logo">makers<br />club</span>
 		</a>
 	</div>
@@ -28,7 +27,7 @@
 
 	<div class="corner">
 		<a target="_blank" href="/">
-			<img src={logo} alt="SCESoc" />
+			<img src={SCESocLogo} alt="SCESoc" />
 			{#if innerWidth > 480}
 				<span class="logo">SCESoc</span>
 			{/if}
