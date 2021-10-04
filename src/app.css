@@ -1,0 +1,134 @@
+@import '@fontsource/fira-mono';
+@import '@fontsource/inter';
+
+:root {
+	font-family: 'Inter', Arial, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+		Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	/* --font-mono: 'Fira Mono', monospace; */
+	--pure-white: #ffffff;
+	--primary-color: #010108;
+	--secondary-color: #d0dde9;
+	--tertiary-color: #edf0f8;
+	--accent-color: #F3CB3E;
+	--heading-color: #fbfbfb;
+	--text-color: #A1A1AA;
+	--code-block-color: #141518;
+	--scesoc-yellow: #F3CB3E;
+	--background-without-opacity: rgba(255, 255, 255, 0.7);
+	--column-width: 42rem;
+	--column-margin-top: 4rem;
+	--text-size: 1.25rem;
+}
+
+body {
+	min-height: 100vh;
+	margin: 0;
+	background: linear-gradient(120deg, #FF00C7 0%, #51003F 100%), linear-gradient(120deg, #0030AD 0%, #00071A 100%), linear-gradient(180deg, #000346 0%, #FF0000 100%), linear-gradient(60deg, #0029FF 0%, #AA0014 100%), radial-gradient(100% 165% at 100% 100%, #FF00A8 0%, #00FF47 100%), radial-gradient(100% 150% at 0% 0%, #FFF500 0%, #51D500 100%);
+	background-blend-mode: overlay, color-dodge, overlay, overlay, difference, normal;
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	background-color: var(--primary-color);
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+body::before {
+	content: '';
+	width: 80vw;
+	height: 100vh;
+	position: absolute;
+	top: 0;
+	left: 10vw;
+	z-index: -1;
+	opacity: 0.05;
+}
+
+#svelte {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+h1,
+h2,
+h3 {
+	color: var(--heading-color);
+}
+
+
+p {
+	font-weight: 400;
+	color: var(--text-color);
+}
+
+p {
+	line-height: 1.5;
+	font-size: var(--text-size);
+}
+
+a {
+	color: var(--accent-color);
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+h1 {
+	font-size: 2.5rem;
+	text-align: center;
+}
+
+h2 {
+	font-size: 2rem;
+}
+
+h3 {
+	font-size: 1.5rem;
+}
+
+pre {
+	font-size: 16px;
+	/* font-family: var(--font-mono); */
+	background-color: rgba(255, 255, 255, 0.45);
+	border-radius: 3px;
+	box-shadow: 2px 2px 6px rgb(255 255 255 / 25%);
+	padding: 0.5em;
+	overflow-x: auto;
+	color: var(--text-color);
+}
+
+code {
+	background-color: var(--code-block-color);
+	border-radius: 0.3rem;
+	color: #fbfbfb;
+	padding: 0.2rem 0.4rem;
+	white-space: nowrap;
+}
+
+input,
+button {
+	font-size: inherit;
+	font-family: inherit;
+}
+
+button:focus:not(:focus-visible) {
+	outline: none;
+}
+
+@media (min-width: 720px) {
+	h1 {
+		font-size: 3rem;
+	}
+}
