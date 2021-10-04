@@ -10,7 +10,7 @@
 	<div class="corner">
 		<a href="/">
 			<!-- <img src={logo} alt="SCESoc" /> -->
-			<span class="logo">Makers<br />Club.</span>
+			<span class="logo">makers<br />club</span>
 		</a>
 	</div>
 
