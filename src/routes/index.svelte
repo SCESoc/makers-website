@@ -1,3 +1,6 @@
+<svelte:head>
+	<title>Makers Club</title>
+</svelte:head>
 <div>
 	<div class="main">
 		<h1 class="main-heading">
