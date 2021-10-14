@@ -26,7 +26,7 @@
 	</nav>
 
 	<div class="corner">
-		<a target="_blank" href="/">
+		<a target="_blank" href="https://www.scesoc.ca/">
 			<img src={SCESocLogo} alt="SCESoc" />
 			{#if innerWidth > 480}
 				<span class="logo">SCESoc</span>
