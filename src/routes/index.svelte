@@ -1,3 +1,7 @@
+<script>
+	import '@fontsource/inter/800.css';
+</script>
+
 <svelte:head>
 	<title>Makers Club</title>
 </svelte:head>

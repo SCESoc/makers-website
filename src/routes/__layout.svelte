@@ -1,6 +1,8 @@
 <script lang="ts">
 	import Header from '$lib/header/Header.svelte';
 	import '../app.css';
+	import '@fontsource/inter/400.css';
+	import '@fontsource/fira-mono/400.css';
 </script>
 
 <Header />
