@@ -135,6 +135,11 @@ code {
 	color: #fbfbfb;
 	padding: 0.1rem 0.4rem;
 	background-color: var(--code-block-color);
+	white-space: nowrap;
+}
+
+pre code {
+	white-space: pre;
 }
 
 blockquote {
