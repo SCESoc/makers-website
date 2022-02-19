@@ -98,15 +98,18 @@
 		height: 3em;
 		display: flex;
 		justify-content: center;
+		line-height: 0;
 		align-items: center;
 		list-style: none;
 		background: var(--background);
+		font-size: 1rem;
 		background-size: contain;
 	}
 
 	li {
 		position: relative;
 		height: 100%;
+		margin: 0;
 	}
 
 	li.active::before {

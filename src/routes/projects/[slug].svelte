@@ -9,9 +9,11 @@
 	<title>{project.metadata.title}</title>
 </svelte:head>
 
-<h1 class="title">{project.metadata.title}</h1>
-<p class="info"><a href="https://github.com/zhuzilin">zhuzilin</a> {date}</p>
-{@html project.content}
+<article>
+	<h1 class="title">{project.metadata.title}</h1>
+	<p class="info">{date}</p>
+	{@html project.content}
+</article>
 
 <style>
 </style>
