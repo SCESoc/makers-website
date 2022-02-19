@@ -60,6 +60,10 @@
 </div>
 
 <style>
+	p {
+		font-size: 1.2rem;
+	}
+
 	.main {
 		text-align: center;
 		min-height: 90vh;
@@ -78,7 +82,7 @@
 
 	.item {
 		display: block;
-		background: rgba(29, 30, 31, 0.7);
+		background: rgb(233, 234, 236);
 		border-radius: 1rem;
 		padding: 1rem 2rem;
 		text-align: center;
@@ -87,7 +91,7 @@
 
 	.main-heading {
 		font-size: 3em;
-		font-weight: 800;
+		font-weight: 900;
 	}
 
 	@media (min-width: 720px) {

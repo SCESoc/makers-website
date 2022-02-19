@@ -7,13 +7,14 @@
 		Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 	--font-mono: 'Fira Mono', monospace;
 	--pure-white: #ffffff;
-	--primary-color: #010108;
+	--primary-color: #fbfbfb;
 	--secondary-color: #d0dde9;
 	--tertiary-color: #edf0f8;
-	--accent-color: #F3CB3E;
-	--heading-color: #fbfbfb;
-	--text-color: #A1A1AA;
+	--accent-color: #d4b613;
+	--heading-color: #151515;
+	--text-color: #333333;
 	--code-block-color: #0d1117;
+	--blockquote-color: #ececec;
 	--scesoc-yellow: #F3CB3E;
 	--background-without-opacity: rgba(255, 255, 255, 0.7);
 	--column-width: 42rem;
@@ -122,7 +123,7 @@ pre {
 	font-size: 16px;
 	font-family: var(--font-mono);
 	background-color: var(--code-block-color);
-	border-radius: 3px;
+	border-radius: 0.4rem;
 	box-shadow: 2px 2px 6px rgb(255 255 255 / 25%);
 	padding: 1em;
 	margin-bottom: 2rem;
@@ -132,7 +133,7 @@ pre {
 code {
 	border-radius: 0.3rem;
 	color: #fbfbfb;
-	padding: 0.2rem 0.4rem;
+	padding: 0.1rem 0.4rem;
 	background-color: var(--code-block-color);
 }
 
@@ -144,11 +145,14 @@ blockquote {
 	margin: 0;
 	padding: 0.1rem 1rem;
 	border-left: 0.35rem solid var(--accent-color);
+	background: var(--blockquote-color);
 }
 
 article img {
 	width: 100%;
 	border-radius: 0.4rem;
+	max-height: 50rem;
+	object-fit: cover;
 }
 
 input,
