@@ -3,8 +3,6 @@
 title: "Project Title"
 # (required) Start date of the project (YYYY-MM-DD), can be an approximate date
 startDate: "2021-07-08"
-# (optional) End date if the project is not ongoing (YYYY-MM-DD), can be an approximate date
-endDate: "2021-07-08"
 # (optional) banner image for the project, url to an image or file name of imahge uploaded to /static/images/projects/
 bannerImage: "https://images.unsplash.com/photo-1525972292986-69295aebf4cc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
 # (required) description of the project
@@ -40,6 +38,23 @@ contactEmail: "jondoe@test.com"
 lookingForCollaborators: true
 # (optional) true if the project is ongoing, false if it is finished. Default: true
 active: true
+# (optional) list of technologies used in the project, array of strings or technology objects with (name, url, logo)
+technologies: [
+  {
+    # (required) name of the technology
+    name: "NextJS",
+    # (optional) url to the technology website
+    url: "https://nextjs.org/",
+    # (optional) url to the technology logo
+    logo: "https://nextjs.org/static/images/next.svg",
+  },
+  "TailwindCSS",
+]
+# (optional) list of tags
+tags: [
+  "Web Fonts",
+  "Project Management",
+]
 ---
 
 Fonts play an essential role in giving character to a website. But if you don't set them up correctly, they could hurt your website's performance and user experience. "Your font choice is critical for branding, readability and performance" - [Lee Robinson](https://leerob.io/). In this blog, I show you the best way to set up custom web fonts on your [Next.js](https://nextjs.org/) and [TailwindCSS](https://tailwindcss.com/) application. The core concepts still apply for applications that don't use this tech stack. This particular blog was inspired by [Lee Robinson's blog](https://leerob.io/blog) on [Web Fonts in 2021](https://leerob.io/blog/fonts).

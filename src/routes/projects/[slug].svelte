@@ -4,8 +4,7 @@
 
 	export let project: Project;
 	let projectData = project.metadata;
-	let startDate = projectData.startDate && dayjs(projectData.startDate).format('MMM D, YYYY');
-	let endDate = projectData.endDate && dayjs(projectData.endDate).format('MMM D, YYYY');
+	let startDate = projectData.startDate && dayjs(projectData.startDate).format('MMMM YYYY');
 </script>
 
 <svelte:head>
@@ -13,19 +12,21 @@
 </svelte:head>
 
 <article>
+	<div class="title-header">
+		{#if projectData.active}
+			<div>Active</div>
+		{/if}
+	</div>
 	<h1 class="title">{projectData.title}</h1>
 	{#if projectData.description}
 		<p class="description">{projectData.description}</p>
 	{/if}
-	<div>
-		{#if projectData.startDate}
-			<p class="info">{projectData.startDate}</p>
+	<div class="title-footer">
+		{#if startDate}
+			<p class="info">Since: {startDate}</p>
 		{/if}
-		{#if projectData.endDate}
-			<p class="info">{projectData.endDate}</p>
-		{/if}
-		{#if projectData.active}
-			<div>Active</div>
+		{#if projectData.tags}
+			<p>Tags</p>
 		{/if}
 	</div>
 	{#if projectData.bannerImage}
@@ -42,16 +43,27 @@
 		</div>
 		<div class="sidebar">
 			{#if projectData.makers && projectData.makers.length}
-				<h2>Makers</h2>
+				<h3>Makers</h3>
 				{#each projectData.makers as maker}
 					<div>{maker.name}</div>
 				{/each}
 			{/if}
-			{#if projectData.contactEmail}
-				<div>{projectData.contactEmail}</div>
+			{#if projectData.technologies && projectData.technologies.length}
+				<h3>Technologies Used</h3>
+				{#each projectData.technologies as technology}
+					{#if typeof technology === 'string'}
+						<div>{technology}</div>
+					{/if}
+					{#if typeof technology === 'object'}
+						<div>{technology.name}</div>
+					{/if}
+				{/each}
 			{/if}
 			{#if projectData.lookingForCollaborators}
-				<div>Looking to collaborate</div>
+				<h3>Collaborate</h3>
+			{/if}
+			{#if projectData.contactEmail}
+				<div>{projectData.contactEmail}</div>
 			{/if}
 		</div>
 	</div>
@@ -83,5 +95,15 @@
 		height: 100%;
 		position: sticky;
 		top: 0;
+	}
+
+	.title-footer {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.title-header {
+		display: flex;
+		justify-content: flex-end;
 	}
 </style>
