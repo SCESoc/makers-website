@@ -7,7 +7,6 @@ import rehypeStringify from 'rehype-stringify';
 import frontmatter from 'remark-frontmatter';
 import highlight from 'rehype-highlight';
 import yaml from 'js-yaml';
-import dayjs from 'dayjs';
 
 const parser = unified()
 	.use(parse)
@@ -25,16 +24,7 @@ export function process(filename) {
 	if (tree.children.length > 0 && tree.children[0].type == "yaml") {
 		metadata = yaml.load(tree.children[0].value);
 		tree.children = tree.children.slice(1, tree.children.length);
-		metadata.date = dayjs(metadata.date).format("MMM D, YYYY");
 	}
-	let content = runner.stringify(runner.runSync(tree));
-	if (!metadata) {
-		metadata = {
-			title: "Error!",
-			date: "?",
-			excerpt: "Missing Frontmatter! Expected at least a title and a date!"
-		};
-		content = "Missing Frontmatter! Expected at least a title and a date!"
-	}
+	const content = runner.stringify(runner.runSync(tree));
 	return { metadata, content };
 }
