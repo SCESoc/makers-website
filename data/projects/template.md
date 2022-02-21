@@ -3,10 +3,12 @@
 title: "Project Title"
 # (required) Start date of the project (YYYY-MM-DD), can be an approximate date
 startDate: "2021-07-08"
-# (optional) banner image for the project, url to an image or file name of imahge uploaded to /static/images/projects/
-bannerImage: "https://images.unsplash.com/photo-1525972292986-69295aebf4cc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+# (optional) banner image for the project, url to an image or file name of image uploaded to /static/images/projects/
+bannerImage: "https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2274&q=80"
 # (required) description of the project
 description: "Learn the best way to optimize your fonts with NextJS and TailwindCSS!!"
+# (optional) logo of the project, url to an image or file name of image uploaded to /static/images/projects/
+logo: "SCESoc_Logo_Yellow.png"
 # (required) list of makers/collaborators of the project, needs at least one maker
 makers: [
 	{
@@ -14,7 +16,7 @@ makers: [
 		name: "Juan Pablo",
 		# (optional) role of the maker in the project
 		role: "Developer",
-		# (optional) avatar image of the maker, url to an image or file name of imahge uploaded to /static/images/projects/
+		# (optional) avatar image of the maker, url to an image or file name of image uploaded to /static/images/projects/
 		avatar: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1760&q=80",
 		# (optional) link to contact - email or website link
 		contactLink: "https://www.linkedin.com/in/juan-pablo-gonzalez-b9a8b917b/",
@@ -24,20 +26,37 @@ makers: [
 		name: "Joe Pablo",
 		# (optional) role of the maker in the project
 		role: "Developer",
-		# (optional) avatar image of the maker, url to an image or file name of imahge uploaded to /static/images/projects/
+		# (optional) avatar image of the maker, url to an image or file name of image uploaded to /static/images/projects/
 		avatar: "example-avatar.png",
 		# (optional) link to contact - email or website link
 		contactLink: "https://www.linkedin.com/in/juan-pablo-gonzalez-b9a8b917b/",
 	}
 ]
-# (optional) link to the project
-url: "https://juanpablobg.com/projects/variable-web-fonts-nextjs-tailwindcss"
-# (optional) contact email
-contactEmail: "jondoe@test.com"
 # (optional) true if looking to collaborate with more makers, false if not. Default: false
 lookingForCollaborators: true
 # (optional) true if the project is ongoing, false if it is finished. Default: true
 active: true
+# (optional) list of social media links
+connectLinks: [
+  {
+    # (required) name of the social media
+    name: "Maker's Club Website",
+    # (required) url of the social media or email address
+    link: "https://makers.scesoc.ca/",
+  },
+  {
+    # (required) name of the social media
+    name: "GitHub",
+    # (required) url of the social media or email address
+    link: "https://github.com/SCESoc/makers-website"
+  },
+  {
+    # (required) name of the social media
+    name: "@CUSCESoc",
+    # (required) url of the social media or email address
+    link: "https://twitter.com/CUSCESoc"
+  }
+]
 # (optional) list of technologies used in the project, array of strings or technology objects with (name, url, logo)
 technologies: [
   {

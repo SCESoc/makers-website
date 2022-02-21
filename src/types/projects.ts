@@ -1,4 +1,5 @@
 import type { Maker } from "./maker";
+import type { ConnectLink } from "./connectLink";
 import type { Technology } from "./technology";
 
 export type Project = {
@@ -7,12 +8,12 @@ export type Project = {
 		startDate: string;
 		description: string;
 		bannerImage?: string;
+		logo?: string;
 		makers: Maker[];
-		url?: string;
-		contactEmail?: string;
 		lookingForCollaborators?: boolean;
 		active?: boolean;
 		technologies?: Technology[];
+		connectLinks?: ConnectLink[];
 		tags?: string[];
 	},
 	content: string;

@@ -16,6 +16,7 @@
 		padding: 0.5rem 0.75rem;
 		border-radius: 1rem;
 		cursor: default;
+		height: fit-content;
 	}
 
 	.circle {

@@ -5,11 +5,15 @@
 	import Tag from '../../components/tags/Tag.svelte';
 	import MakerTag from '../../components/tags/MakerTag.svelte';
 	import TechTag from '../../components/tags/TechTag.svelte';
-	import SmartLink from '../../components/link/SmartLink.svelte';
+	import ConnectTag from '../../components/tags/ConnectTag.svelte';
+	import CollaborateTag from '../../components/tags/CollaborateTag.svelte';
 
 	export let project: Project;
 	let projectData = project.metadata;
 	let startDate = projectData.startDate && dayjs(projectData.startDate).format('MMMM YYYY');
+	let logo = projectData.logo.startsWith('http')
+		? projectData.logo
+		: `/static/images/projects/${projectData.logo}`;
 </script>
 
 <svelte:head>
@@ -17,9 +21,17 @@
 </svelte:head>
 
 <div class="title-header">
-	{#if projectData.active}
-		<ActiveTag active={projectData.active} />
+	{#if logo}
+		<img class="logo" src={logo} alt="{projectData.title}'s Logo" />
 	{/if}
+	<div class="title-header-right">
+		{#if projectData.active}
+			<ActiveTag active={projectData.active} />
+		{/if}
+		{#if projectData.lookingForCollaborators}
+			<CollaborateTag />
+		{/if}
+	</div>
 </div>
 <h1 class="title">{projectData.title}</h1>
 {#if projectData.description}
@@ -61,24 +73,17 @@
 				{/each}
 			</div>
 		{/if}
-		{#if projectData.url || projectData.contactEmail}
+		{#if projectData.connectLinks && projectData.connectLinks.length}
 			<h3>Connect</h3>
-		{/if}
-		{#if projectData.lookingForCollaborators}
-			<p class="collab">Reach out to us! 👋 We are looking for collaborators!</p>
-		{/if}
-		<div class="links">
-			{#if projectData.url}
-				<SmartLink href={projectData.url}>
-					<div class="link">🔗&nbsp;&nbsp;&nbsp;Website</div>
-				</SmartLink>
+			{#if projectData.lookingForCollaborators}
+				<p class="collab">Reach out to us! 👋 We are looking for collaborators!</p>
 			{/if}
-			{#if projectData.contactEmail}
-				<SmartLink href={projectData.contactEmail}>
-					<div class="link">📧&nbsp;&nbsp;&nbsp;{projectData.contactEmail}</div>
-				</SmartLink>
-			{/if}
-		</div>
+			<div class="links">
+				{#each projectData.connectLinks as connectLink}
+					<ConnectTag {connectLink} />
+				{/each}
+			</div>
+		{/if}
 	</div>
 	<article class="content">
 		{@html project.content}
@@ -121,6 +126,7 @@
 		padding: 0.5rem 1rem;
 		border: 1px solid #ccc;
 		border-radius: 0.5rem;
+		width: 100%;
 	}
 
 	.link:hover {
@@ -131,6 +137,11 @@
 		display: flex;
 		flex-direction: column;
 		gap: 0.5rem;
+	}
+
+	.logo {
+		height: 5rem;
+		border-radius: 0.4rem;
 	}
 
 	.sidebar {
@@ -156,7 +167,14 @@
 
 	.title-header {
 		display: flex;
-		justify-content: flex-end;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.title-header-right {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
 	}
 
 	@media (min-width: 720px) {
@@ -182,6 +200,7 @@
 			flex-direction: row;
 			justify-content: space-between;
 			gap: 3rem;
+			padding: 0.5rem 1rem;
 		}
 	}
 </style>
