@@ -171,9 +171,10 @@
 
 		.sidebar {
 			width: 30%;
-			height: 100%;
+			height: 100vh;
 			position: sticky;
 			top: 0;
+			overflow-y: auto;
 		}
 
 		.title-footer {
