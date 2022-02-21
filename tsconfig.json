@@ -37,6 +37,12 @@
 			],
 			"$types/*": [
 				"src/types/*"
+			],
+			"$components": [
+				"src/components"
+			],
+			"$components/*": [
+				"src/components/*"
 			]
 		}
 	},

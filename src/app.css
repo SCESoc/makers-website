@@ -60,15 +60,20 @@ p {
 p {
 	line-height: 1.5;
 	font-size: var(--text-size);
-	margin: 1.5rem 0;
+	margin: 1rem 0;
 }
 
 a {
+	color: var(--text-color);
+	text-decoration: none;
+}
+
+article a {
 	color: var(--accent-color);
 	text-decoration: none;
 }
 
-a:hover {
+article a:hover {
 	text-decoration: underline;
 }
 
@@ -80,8 +85,8 @@ strong {
 h1 {
 	font-size: 2.5rem;
 	text-align: center;
-	margin-top: 3rem;
-	margin-bottom: 2rem;
+	margin-top: 2rem;
+	margin-bottom: 1.5rem;
 }
 
 h2 {

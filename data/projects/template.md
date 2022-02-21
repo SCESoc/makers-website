@@ -15,7 +15,7 @@ makers: [
 		# (optional) role of the maker in the project
 		role: "Developer",
 		# (optional) avatar image of the maker, url to an image or file name of imahge uploaded to /static/images/projects/
-		avatar: "example-avatar.png",
+		avatar: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1760&q=80",
 		# (optional) link to contact - email or website link
 		contactLink: "https://www.linkedin.com/in/juan-pablo-gonzalez-b9a8b917b/",
 	},
@@ -45,8 +45,12 @@ technologies: [
     name: "NextJS",
     # (optional) url to the technology website
     url: "https://nextjs.org/",
-    # (optional) url to the technology logo
-    logo: "https://nextjs.org/static/images/next.svg",
+  },
+  {
+    # (required) name of the technology
+    name: "GitHub",
+    # (optional) url to the technology website
+    url: "https://github.com/",
   },
   "TailwindCSS",
 ]
@@ -54,6 +58,9 @@ technologies: [
 tags: [
   "Web Fonts",
   "Project Management",
+  "TailwindCSS",
+  "dharsh",
+  "Dharsh",
 ]
 ---
 
