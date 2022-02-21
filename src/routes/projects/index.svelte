@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { base } from '$app/paths';
+	import ProjectCard from '../../components/cards/ProjectCard.svelte';
 	import type { Project } from '$types/projects';
 
 	export let projects: Project[];
@@ -10,14 +11,33 @@
 </svelte:head>
 <div>
 	<h1>Projects</h1>
-	<p class="info">{projects.length} projects.</p>
-	{#each projects as project}
-		<a href={`${base}/projects/${project.slug}`}>
-			<h2 class="title">{project.metadata.title}</h2>
-			<p>{project.metadata.description}</p>
-		</a>
-	{/each}
+	<p class="page-description">List of projects being worked on in the Carleton Community</p>
+	<div class="stats">{projects.length} Project(s)</div>
+	<div class="projects">
+		{#each projects as project}
+			<ProjectCard {project} />
+		{/each}
+	</div>
 </div>
 
 <style>
+	.page-description {
+		text-align: center;
+		text-align: center;
+		color: #777;
+	}
+
+	.projects {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
+
+	.stats {
+		display: flex;
+		justify-content: flex-end;
+		font-size: 1rem;
+		font-weight: 600;
+		margin-bottom: 1rem;
+	}
 </style>

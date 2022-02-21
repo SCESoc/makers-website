@@ -27,7 +27,6 @@
 		gap: 0.5rem;
 		padding: 0.5rem;
 		border-radius: 0.4rem;
-		cursor: default;
 		border: 1px solid #ccc;
 	}
 

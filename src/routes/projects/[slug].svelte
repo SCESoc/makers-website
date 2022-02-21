@@ -120,19 +120,6 @@
 		color: #777;
 	}
 
-	.link {
-		font-size: 1rem;
-		font-weight: 600;
-		padding: 0.5rem 1rem;
-		border: 1px solid #ccc;
-		border-radius: 0.5rem;
-		width: 100%;
-	}
-
-	.link:hover {
-		cursor: auto;
-	}
-
 	.links {
 		display: flex;
 		flex-direction: column;

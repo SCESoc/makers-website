@@ -15,7 +15,6 @@
 	.container {
 		padding: 0.5rem 0.75rem;
 		border-radius: 1rem;
-		cursor: default;
 		border: 1px solid;
 	}
 

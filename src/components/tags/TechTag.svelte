@@ -33,7 +33,6 @@
 		gap: 0.5rem;
 		padding: 0.5rem 0.75rem;
 		border-radius: 2rem;
-		cursor: default;
 		border: 1px solid #ccc;
 	}
 

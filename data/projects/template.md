@@ -1,6 +1,6 @@
 ---
 # (required) Title of the project
-title: "Project Title"
+title: "Project Title - What if it is a log title man? and longer and longer and longer?"
 # (required) Start date of the project (YYYY-MM-DD), can be an approximate date
 startDate: "2021-07-08"
 # (optional) banner image for the project, url to an image or file name of image uploaded to /static/images/projects/

@@ -60,6 +60,10 @@
 </div>
 
 <style>
+	a {
+		color: var(--accent-color);
+	}
+
 	p {
 		font-size: 1.2rem;
 	}
