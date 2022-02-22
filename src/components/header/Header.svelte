@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	import { page } from '$app/stores';
 	import SCESocLogo from './SCESocLogo.svg';
 	import { mobileMenuOpen } from '../../stores/global';
@@ -28,7 +29,7 @@
 			<ul>
 				{#each menu as item}
 					<li class:active={item.active($page.url.pathname)}>
-						<a sveltekit:prefetch href={item.path}>{item.name}</a>
+						<a sveltekit:prefetch href={`${base}${item.path}`}>{item.name}</a>
 					</li>
 				{/each}
 			</ul>

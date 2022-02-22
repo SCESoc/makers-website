@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	import { page } from '$app/stores';
 	import { mobileMenuOpen } from '../../stores/global';
 	import { menu } from '$lib/menu';
@@ -29,7 +30,7 @@
 	<ul>
 		{#each menu as item}
 			<li class:active={item.active($page.url.pathname)}>
-				<a sveltekit:prefetch href={item.path}>{item.name}</a>
+				<a sveltekit:prefetch href={`${base}${item.path}`}>{item.name}</a>
 			</li>
 		{/each}
 	</ul>
