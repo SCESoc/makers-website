@@ -10,7 +10,7 @@
 	let startDate = projectData.startDate && dayjs(projectData.startDate).format('MMMM YYYY');
 	let logo = projectData.logo.startsWith('http')
 		? projectData.logo
-		: `/static/images/projects/${projectData.logo}`;
+		: `${base}/images/projects/${projectData.logo}`;
 </script>
 
 <a sveltekit:prefetch href={`${base}/projects/${project.slug}`}>

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	import ActiveTag from '../../components/tags/ActiveTag.svelte';
 	import type { Project } from '$types/projects';
 	import dayjs from 'dayjs';
@@ -13,7 +14,7 @@
 	let startDate = projectData.startDate && dayjs(projectData.startDate).format('MMMM YYYY');
 	let logo = projectData.logo.startsWith('http')
 		? projectData.logo
-		: `/static/images/projects/${projectData.logo}`;
+		: `${base}/images/projects/${projectData.logo}`;
 </script>
 
 <svelte:head>

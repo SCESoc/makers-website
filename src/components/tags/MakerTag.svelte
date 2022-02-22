@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	import SmartLink from '../link/SmartLink.svelte';
 	import type { Maker } from '$types/maker';
 	import { createAvatar } from '@dicebear/avatars';
@@ -8,7 +9,7 @@
 	let avatarImage = maker.avatar
 		? maker.avatar.startsWith('http')
 			? maker.avatar
-			: `/static/images/projects/${maker.avatar}`
+			: `${base}/images/projects/${maker.avatar}`
 		: createAvatar(style, {
 				seed: 'custom-seed'
 		  });
