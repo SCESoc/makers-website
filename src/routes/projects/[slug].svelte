@@ -172,6 +172,7 @@
 
 		.content {
 			width: 70%;
+			padding: 1.5rem 0;
 		}
 
 		.sidebar {

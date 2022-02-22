@@ -9,7 +9,7 @@ export function get() {
 		.filter(fileName => {
 			if (count < 3) {
 				count += 1;
-				return /.+\.md$/.test(fileName)
+				return /.+\.md$/.test(fileName) && !/^template\.md$/.test(fileName)
 			}
 			return false;
 		})

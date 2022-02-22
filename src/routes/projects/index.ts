@@ -5,7 +5,7 @@ import { process } from '$lib/markdown';
 /** @type {import('@sveltejs/kit').RequestHandler} */
 export function get() {
 	const projects = fs.readdirSync(`data/projects`)
-		.filter(fileName => /.+\.md$/.test(fileName))
+		.filter(fileName => /.+\.md$/.test(fileName) && !/^template\.md$/.test(fileName))
 		.map(fileName => {
 			const { metadata } = process(`data/projects/${fileName}`);
 			return {
