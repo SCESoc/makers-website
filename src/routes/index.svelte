@@ -1,11 +1,21 @@
+<script lang="ts">
+	import ProjectCard from '../components/cards/ProjectCard.svelte';
+	import { base } from '$app/paths';
+
+	import type { Project } from '$types/projects';
+
+	import FloatingBlurBlob from '../components/backgrounds/FloatingBlurBlob.svelte';
+
+	export let projects: Project[];
+</script>
+
 <svelte:head>
 	<title>Makers Club</title>
 </svelte:head>
 <div>
+	<FloatingBlurBlob style="position: absolute; top: 0; left: 0; width: 100vw; z-index: -1;" />
 	<div class="main">
-		<h1 class="main-heading">
-			A Community within <a target="_blank" href="https://www.scesoc.ca">SCESoc</a> that Learns by Making
-		</h1>
+		<h1 class="main-heading">A Community that Learns by Making</h1>
 		<p>
 			We're a community that comes together to work on personal and group projects. We support,
 			provide feedback and share knowledge between us.
@@ -18,25 +28,30 @@
 			Then you will get access to all the <code>Makers Club</code> channels on there.
 		</p>
 		<p>
-			We'll be meeting up on <code
+			We meet up once in a while on <code
 				><a target="_blank" href="https://www.scesoc.ca/discord">SCESoc's Discord</a></code
 			>
-			every <code>Saturday @11:00am</code>
+			to discuss what we're working on and learning.
 		</p>
 	</div>
 
 	<div class="main">
 		<h1>What is the Makers Club?</h1>
 		<p>
-			Traditionally SCESoc has hosted workshops to help members in the society learn skills outside
-			of class. This year, we wanted to also focus on projects and build a community of makers.
-			Projects are a great way to learn new skills and to get involved in the community. It is also
-			very valued by companies in the industry.
+			Projects are a great way for students to expand their knowledge and skill on aspects related
+			to their career interests. They teach you things that might not have been taught to you in
+			class and you learn from running into problems and making mistakes. It is a different kind of
+			learning from lectures and books, it's learning by making. Books and lectures are very
+			important for building a foundation, but can only take you so far. Actually building things
+			with the knowledge you have gives you a better understanding of how things come together and
+			can motivate you to learn more. This is why companies love asking you what kind of personal
+			projects you've worked on.
 		</p>
 		<p>
-			This year we're trying to bring people together to help motivate each other and learn by
-			making. SCESoc is also going to host it's own project for the year to which anyone can
-			contribute to and learn from.
+			We want Makers Club to offer an experience to the Carleton community that fast-tracks the
+			journey of students towards their goals and interests through various efforts surrounded
+			around 'Projects' - personal projects, side projects, group projects. A community can inspire,
+			support and hold you accountable to your goals.
 		</p>
 	</div>
 
@@ -44,7 +59,7 @@
 		<h1>Things we do</h1>
 		<ul class="grid">
 			<li class="item">
-				<h3>Meet up weekly on Discord to share what we're working on</h3>
+				<h3>Share what we're working on</h3>
 			</li>
 			<li class="item">
 				<h3>Offer feedback and support</h3>
@@ -57,15 +72,32 @@
 			</li>
 		</ul>
 	</div>
+
+	<div class="main">
+		<h1>Community Projects</h1>
+		<div class="flex-end">
+			<a class="see-more" sveltekit:prefetch href="{base}/projects">See All -></a>
+		</div>
+		<div class="projects">
+			{#each projects as project}
+				<ProjectCard {project} />
+			{/each}
+		</div>
+	</div>
 </div>
 
 <style>
 	a {
-		color: var(--accent-color);
+		color: var(--scesoc-yellow);
 	}
 
 	p {
-		font-size: 1.2rem;
+		font-size: 1rem;
+	}
+
+	.flex-end {
+		display: flex;
+		justify-content: flex-end;
 	}
 
 	.main {
@@ -79,18 +111,18 @@
 	.grid {
 		display: grid;
 		grid-template-columns: 1fr;
-		grid-gap: 3rem;
+		grid-gap: 1rem;
 		margin: 0 auto;
 		padding: 3rem 0;
 	}
 
 	.item {
 		display: block;
-		background: rgb(233, 234, 236);
-		border-radius: 1rem;
+		/* background: rgb(233, 234, 236); */
+		border-radius: 0.4rem;
 		padding: 1rem 2rem;
 		text-align: center;
-		box-shadow: 0.5rem 0.5rem black, -0.3rem -0.3rem var(--scesoc-yellow);
+		box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
 	}
 
 	.main-heading {
@@ -98,7 +130,24 @@
 		font-weight: 900;
 	}
 
+	.projects {
+		display: flex;
+		flex-direction: column;
+		margin-top: 1rem;
+		gap: 1rem;
+	}
+
+	.see-more {
+		font-size: 1rem;
+		font-weight: 600;
+		color: var(--text-color);
+	}
+
 	@media (min-width: 720px) {
+		p {
+			font-size: 1.2rem;
+		}
+
 		.grid {
 			display: grid;
 			grid-template-columns: 1fr 1fr;
@@ -107,8 +156,8 @@
 		}
 
 		.main-heading {
-			font-size: 5em;
-			font-weight: 800;
+			font-size: 6em;
+			font-weight: 900;
 		}
 
 		.main {

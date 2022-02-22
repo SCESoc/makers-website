@@ -5,7 +5,7 @@
 </script>
 
 {#if href && href.startsWith('/')}
-	<a {href} {...$$restProps}><slot /></a>
+	<a sveltekit:prefetch {href} {...$$restProps}><slot /></a>
 {:else if emailIsValid(href)}
 	<a href="mailto: {href}" {...$$restProps}><slot /></a>
 {:else}

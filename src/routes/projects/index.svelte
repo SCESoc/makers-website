@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { base } from '$app/paths';
 	import ProjectCard from '../../components/cards/ProjectCard.svelte';
 	import type { Project } from '$types/projects';
 
@@ -11,7 +10,7 @@
 </svelte:head>
 <div>
 	<h1>Projects</h1>
-	<p class="page-description">List of projects being worked on in the Carleton Community</p>
+	<p class="page-description">Curation of projects being worked on in the Carleton Community</p>
 	<div class="stats">{projects.length} Project(s)</div>
 	<div class="projects">
 		{#each projects as project}

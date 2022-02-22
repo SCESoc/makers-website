@@ -13,7 +13,7 @@
 		: `/static/images/projects/${projectData.logo}`;
 </script>
 
-<a href={`${base}/projects/${project.slug}`}>
+<a sveltekit:prefetch href={`${base}/projects/${project.slug}`}>
 	<div class="container">
 		<div class="header">
 			{#if logo}
@@ -77,11 +77,13 @@
 		font-size: 1rem;
 		font-weight: 600;
 		width: 100%;
+		text-align: center;
 	}
 
 	.description {
 		font-size: 1rem;
 		color: #777;
+		text-align: center;
 	}
 
 	.footer {
@@ -108,6 +110,7 @@
 
 	.tags {
 		display: flex;
+		justify-content: center;
 		flex-wrap: wrap;
 		align-items: center;
 		gap: 0.5rem;
@@ -117,7 +120,7 @@
 		font-size: 1.5rem;
 		font-weight: bold;
 		margin-bottom: 0.5rem;
-		text-align: start;
+		text-align: center;
 		width: 100%;
 	}
 
@@ -146,6 +149,10 @@
 			width: fit-content;
 		}
 
+		.description {
+			text-align: start;
+		}
+
 		.footer {
 			flex-direction: row;
 		}
@@ -156,6 +163,7 @@
 
 		.title {
 			width: fit-content;
+			text-align: start;
 		}
 
 		.title-line {

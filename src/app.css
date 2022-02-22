@@ -20,6 +20,7 @@
 	--column-width: 42rem;
 	--column-margin-top: 4rem;
 	--text-size: 1.10rem;
+	--text-size-small: 1rem;
 }
 
 body {
@@ -59,7 +60,7 @@ p {
 
 p {
 	line-height: 1.5;
-	font-size: var(--text-size);
+	font-size: var(--text-size-small);
 	margin: 1rem 0;
 }
 
@@ -90,13 +91,13 @@ h1 {
 }
 
 h2 {
-	font-size: 2rem;
+	font-size: 1.5rem;
 	margin-top: 2rem;
 	margin-bottom: 1.5rem;
 }
 
 h3 {
-	font-size: 1.5rem;
+	font-size: 1rem;
 	margin-top: 1.5rem;
 	margin-bottom: 1rem;
 }
@@ -178,5 +179,17 @@ button:focus:not(:focus-visible) {
 @media (min-width: 720px) {
 	h1 {
 		font-size: 3rem;
+	}
+
+	h2 {
+		font-size: 2rem;
+	}
+
+	h3 {
+		font-size: 1.5rem;
+	}
+
+	p {
+		font-size: var(--text-size);
 	}
 }
