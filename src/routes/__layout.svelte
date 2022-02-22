@@ -1,13 +1,26 @@
 <script lang="ts">
-	import Header from '$lib/header/Header.svelte';
 	import '../app.css';
 	import '@fontsource/inter/400.css';
 	import '@fontsource/fira-mono/400.css';
+	import '@fontsource/inter/800.css';
+	import '@fontsource/inter/900.css';
+	import Header from '../components/header/Header.svelte';
+	import MobileMenu from '../components/header/MobileMenu.svelte';
+	import { mobileMenuOpen } from '../stores/global';
+
+	let mobileMenuOpenValue: boolean;
+	mobileMenuOpen.subscribe((value) => {
+		mobileMenuOpenValue = value;
+	});
 </script>
+
+{#if mobileMenuOpenValue}
+	<MobileMenu />
+{/if}
 
 <Header />
 
-<main>
+<main class:no-scroll={mobileMenuOpenValue}>
 	<slot />
 </main>
 
@@ -24,6 +37,10 @@
 		display: flex;
 		justify-content: space-around;
 		gap: 4rem;
+	}
+
+	.no-scroll {
+		position: fixed;
 	}
 
 	main {

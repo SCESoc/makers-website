@@ -1,45 +1,32 @@
 @import '@fontsource/fira-mono';
 @import '@fontsource/inter';
+@import './github-dark-hljs';
 
 :root {
 	font-family: Inter, Arial, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
 		Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-	/* --font-mono: 'Fira Mono', monospace; */
+	--font-mono: 'Fira Mono', monospace;
 	--pure-white: #ffffff;
-	--primary-color: #010108;
+	--primary-color: #fbfbfb;
 	--secondary-color: #d0dde9;
 	--tertiary-color: #edf0f8;
-	--accent-color: #F3CB3E;
-	--heading-color: #fbfbfb;
-	--text-color: #A1A1AA;
-	--code-block-color: #141518;
+	--accent-color: #d4b613;
+	--heading-color: #151515;
+	--text-color: #333333;
+	--code-block-color: #0d1117;
+	--blockquote-color: #ececec;
 	--scesoc-yellow: #F3CB3E;
 	--background-without-opacity: rgba(255, 255, 255, 0.7);
 	--column-width: 42rem;
 	--column-margin-top: 4rem;
-	--text-size: 1.25rem;
+	--text-size: 1.10rem;
+	--text-size-small: 1rem;
 }
 
 body {
 	min-height: 100vh;
 	margin: 0;
-	background: linear-gradient(120deg, #FF00C7 0%, #51003F 100%), linear-gradient(120deg, #0030AD 0%, #00071A 100%), linear-gradient(180deg, #000346 0%, #FF0000 100%), linear-gradient(60deg, #0029FF 0%, #AA0014 100%), radial-gradient(100% 165% at 100% 100%, #FF00A8 0%, #00FF47 100%), radial-gradient(100% 150% at 0% 0%, #FFF500 0%, #51D500 100%);
-	background-blend-mode: overlay, color-dodge, overlay, overlay, difference, normal;
-	background-size: 400% 400%;
-	animation: gradient 15s ease infinite;
 	background-color: var(--primary-color);
-}
-
-@keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
 }
 
 body::before {
@@ -73,48 +60,110 @@ p {
 
 p {
 	line-height: 1.5;
-	font-size: var(--text-size);
+	font-size: var(--text-size-small);
+	margin: 1rem 0;
 }
 
 a {
+	color: var(--text-color);
+	text-decoration: none;
+}
+
+article a {
 	color: var(--accent-color);
 	text-decoration: none;
 }
 
-a:hover {
+article a:hover {
 	text-decoration: underline;
+}
+
+strong {
+	font-weight: 600;
+	color: var(--heading-color);
 }
 
 h1 {
 	font-size: 2.5rem;
 	text-align: center;
+	margin-top: 2rem;
+	margin-bottom: 1.5rem;
 }
 
 h2 {
-	font-size: 2rem;
+	font-size: 1.5rem;
+	margin-top: 2rem;
+	margin-bottom: 1.5rem;
 }
 
 h3 {
-	font-size: 1.5rem;
+	font-size: 1rem;
+	margin-top: 1.5rem;
+	margin-bottom: 1rem;
 }
 
-pre {
-	font-size: 16px;
-	/* font-family: var(--font-mono); */
-	background-color: rgba(255, 255, 255, 0.45);
-	border-radius: 3px;
-	box-shadow: 2px 2px 6px rgb(255 255 255 / 25%);
-	padding: 0.5em;
-	overflow-x: auto;
+ul {
+	list-style: disc;
+	padding: 0;
+	margin: 0.5rem 2rem;
+	line-height: 1.5;
+	font-size: var(--text-size);
 	color: var(--text-color);
 }
 
-code {
+ol {
+	list-style: decimal;
+	padding: 0;
+	margin: 0.5rem 2rem;
+	line-height: 1.5;
+	font-size: var(--text-size);
+	color: var(--text-color);
+}
+
+li {
+	margin-bottom: 1rem;
+}
+
+pre {
+	display: block;
+	font-size: 16px;
+	font-family: var(--font-mono);
 	background-color: var(--code-block-color);
+	border-radius: 0.4rem;
+	box-shadow: 2px 2px 6px rgb(255 255 255 / 25%);
+	padding: 1em;
+	margin-bottom: 2rem;
+	overflow-x: auto;
+}
+
+code {
 	border-radius: 0.3rem;
 	color: #fbfbfb;
-	padding: 0.2rem 0.4rem;
+	padding: 0.1rem 0.4rem;
+	background-color: var(--code-block-color);
 	white-space: nowrap;
+}
+
+pre code {
+	white-space: pre;
+}
+
+blockquote {
+	font-style: italic;
+	font-size: 1.2rem;
+	line-height: 1.5;
+	border-radius: 1rem;
+	margin: 0;
+	padding: 0.1rem 1rem;
+	border-left: 0.35rem solid var(--accent-color);
+	background: var(--blockquote-color);
+}
+
+article img {
+	width: 100%;
+	border-radius: 0.4rem;
+	max-height: 50rem;
+	object-fit: cover;
 }
 
 input,
@@ -130,5 +179,17 @@ button:focus:not(:focus-visible) {
 @media (min-width: 720px) {
 	h1 {
 		font-size: 3rem;
+	}
+
+	h2 {
+		font-size: 2rem;
+	}
+
+	h3 {
+		font-size: 1.5rem;
+	}
+
+	p {
+		font-size: var(--text-size);
 	}
 }

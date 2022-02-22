@@ -1,14 +1,21 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import SCESocLogo from './SCESocLogo.svg';
+	import { mobileMenuOpen } from '../../stores/global';
+	import { menu } from '$lib/menu';
+
 	let innerWidth;
+
+	function openMobileMenu() {
+		mobileMenuOpen.update((v) => true);
+	}
 </script>
 
 <svelte:window bind:innerWidth />
 
 <header>
 	<div class="corner">
-		<a href="/">
+		<a sveltekit:prefetch href="/">
 			<span class="logo">makers<br />club</span>
 		</a>
 	</div>
@@ -17,9 +24,34 @@
 		<svg viewBox="0 0 2 3" aria-hidden="true">
 			<path d="M0,0 L1,2 C1.5,3 1.5,3 2,3 L2,0 Z" />
 		</svg>
-		<ul>
-			<li class:active={$page.path === '/'}><a sveltekit:prefetch href="/">Home</a></li>
-		</ul>
+		{#if innerWidth > 480}
+			<ul>
+				{#each menu as item}
+					<li class:active={item.active($page.url.pathname)}>
+						<a sveltekit:prefetch href={item.path}>{item.name}</a>
+					</li>
+				{/each}
+			</ul>
+		{:else}
+			<ul>
+				<li on:click={openMobileMenu}>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						class="h-6 w-6"
+						fill="none"
+						viewBox="0 0 24 24"
+						stroke="#fff"
+					>
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+							d="M4 6h16M4 12h16M4 18h16"
+						/>
+					</svg>
+				</li>
+			</ul>
+		{/if}
 		<svg viewBox="0 0 2 3" aria-hidden="true">
 			<path d="M0,0 L0,3 C0.5,3 0.5,3 1,2 L2,0 Z" />
 		</svg>
@@ -73,7 +105,7 @@
 	nav {
 		display: flex;
 		justify-content: center;
-		--background: rgba(29, 30, 31, 0.7);
+		--background: #151515;
 	}
 
 	svg {
@@ -93,15 +125,18 @@
 		height: 3em;
 		display: flex;
 		justify-content: center;
+		line-height: 0;
 		align-items: center;
 		list-style: none;
 		background: var(--background);
+		font-size: 1rem;
 		background-size: contain;
 	}
 
 	li {
 		position: relative;
 		height: 100%;
+		margin: 0;
 	}
 
 	li.active::before {
@@ -121,7 +156,7 @@
 		height: 100%;
 		align-items: center;
 		padding: 0 1em;
-		color: var(--heading-color);
+		color: #fff;
 		font-weight: 700;
 		font-size: 0.8rem;
 		text-transform: uppercase;
