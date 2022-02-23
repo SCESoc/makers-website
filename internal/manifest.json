@@ -1,6 +1,6 @@
 {
   ".svelte-kit/runtime/client/start.js": {
-    "file": "start-8efef2e6.js",
+    "file": "start-7b03a7d1.js",
     "src": ".svelte-kit/runtime/client/start.js",
     "isEntry": true,
     "imports": [
@@ -16,7 +16,7 @@
     ]
   },
   "src/routes/__layout.svelte": {
-    "file": "pages/__layout.svelte-cf08c91f.js",
+    "file": "pages/__layout.svelte-23c0d62f.js",
     "src": "src/routes/__layout.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -28,7 +28,7 @@
       "assets/pages/__layout.svelte-44a7876e.css"
     ],
     "assets": [
-      "assets/SCESocLogo-71b40d75.svg",
+      "assets/SCESocLogo-127799d2.svg",
       "assets/fira-mono-cyrillic-ext-400-normal-3df7909e.woff2",
       "assets/fira-mono-all-400-normal-1e3b098c.woff",
       "assets/fira-mono-cyrillic-400-normal-c7d433fd.woff2",
@@ -69,7 +69,7 @@
     ]
   },
   "src/routes/index.svelte": {
-    "file": "pages/index.svelte-b47f3fb3.js",
+    "file": "pages/index.svelte-1b972fdd.js",
     "src": "src/routes/index.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
