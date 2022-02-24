@@ -1,18 +1,14 @@
 import fs from 'fs';
-import dayjs from 'dayjs';
 import { process } from '$lib/markdown';
+
+const featuredProjects = [
+	"knowledge-base",
+]
 
 /** @type {import('@sveltejs/kit').RequestHandler} */
 export function get() {
-	let count = 0;
 	const projects = fs.readdirSync(`data/projects`)
-		.filter(fileName => {
-			if (count < 3) {
-				count += 1;
-				return /.+\.md$/.test(fileName) && !/^template\.md$/.test(fileName)
-			}
-			return false;
-		})
+		.filter(fileName => /.+\.md$/.test(fileName) && featuredProjects.includes(fileName.replace(/\.md$/, '')))
 		.map(fileName => {
 			const { metadata } = process(`data/projects/${fileName}`);
 			return {
@@ -20,8 +16,6 @@ export function get() {
 				slug: fileName.slice(0, -3)
 			};
 		});
-	// sort the projects by create startDate.
-	projects.sort((a, b) => (dayjs(a.metadata.startDate, "MMM D, YYYY").diff(dayjs(b.metadata.startDate, "MMM D, YYYY"))));
 
 	return {
 		body: {
