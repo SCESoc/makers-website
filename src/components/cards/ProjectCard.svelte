@@ -137,7 +137,7 @@
 	}
 
 	.s-screen {
-		display: inherit;
+		display: block;
 	}
 
 	@media (min-width: 720px) {

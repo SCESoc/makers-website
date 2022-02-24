@@ -17,15 +17,16 @@
 	<div class="main">
 		<h1 class="main-heading">A Community that Learns by Making</h1>
 		<p>
-			We're a community that comes together to work on personal and group projects. We support,
-			provide feedback and share knowledge between us.
+			We're a community of like minded individuals who connect to work on personal and group
+			projects. We support, provide feedback and share knowledge between each other
 		</p>
 		<p>
 			Anyone can join! To join the Makers Club, type <code>#assign MAKER</code> in the
 			<code>#roles</code>
 			channel on
-			<code><a target="_blank" href="https://www.scesoc.ca/discord">SCESoc's Discord</a></code>.
-			Then you will get access to all the <code>Makers Club</code> channels on there.
+			<code><a target="_blank" href="https://www.scesoc.ca/discord">SCESoc's Discord</a></code>. You
+			will be able to access all the
+			<code>Makers Club</code> channels available
 		</p>
 		<p>
 			We meet up once in a while on <code
@@ -38,20 +39,20 @@
 	<div class="main">
 		<h1>What is the Makers Club?</h1>
 		<p>
-			Projects are a great way for students to expand their knowledge and skill on aspects related
-			to their career interests. They teach you things that might not have been taught to you in
-			class and you learn from running into problems and making mistakes. It is a different kind of
+			Projects are a great way to expand a student&apos;s knowledge and skill related to their
+			career and interests. Projects teaches the student to apply what they have learnt in college
+			and identify the bottlenecks they face in their respective projects. Students get the
+			opportunity to make mistakes without fear and learn practically. It is a different kind of
 			learning from lectures and books, it's learning by making. Books and lectures are very
-			important for building a foundation, but can only take you so far. Actually building things
-			with the knowledge you have gives you a better understanding of how things come together and
-			can motivate you to learn more. This is why companies love asking you what kind of personal
-			projects you've worked on.
+			important for building a foundation. Actually building things with the knowledge you have
+			learnt from the lectures gives you a better understanding of how things come together and you
+			will be motivated to learn more. Every company asks about the project you have done.
 		</p>
 		<p>
-			We want Makers Club to offer an experience to the Carleton community that fast-tracks the
-			journey of students towards their goals and interests through various efforts surrounded
-			around 'Projects' - personal projects, side projects, group projects. A community can inspire,
-			support and hold you accountable to your goals.
+			Makers Club offers an experience to the Carleton community that can fast-track the journey of
+			students towards their goals and interests through various activities around 'Projects' -
+			personal projects, side projects, group projects. A community that can inspire, support and
+			track your goals.
 		</p>
 	</div>
 
@@ -59,16 +60,16 @@
 		<h1>Things we do</h1>
 		<ul class="grid">
 			<li class="item">
-				<h3>Share what we're working on</h3>
+				<div class="item-text">SHARE OUR PROJECTS</div>
 			</li>
 			<li class="item">
-				<h3>Offer feedback and support</h3>
+				<div class="item-text">COMMUNITY SUPPORT</div>
 			</li>
 			<li class="item">
-				<h3>Hold each other accountable</h3>
+				<div class="item-text">ACCOUNTABILITY</div>
 			</li>
 			<li class="item">
-				<h3>Share knowledge</h3>
+				<div class="item-text">KNOWLEDGE SHARING</div>
 			</li>
 		</ul>
 	</div>
@@ -117,12 +118,18 @@
 	}
 
 	.item {
-		display: block;
-		/* background: rgb(233, 234, 236); */
+		display: flex;
+		align-items: center;
+		justify-content: center;
 		border-radius: 0.4rem;
-		padding: 1rem 2rem;
+		padding: 2rem 2.5rem;
 		text-align: center;
-		box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+		box-shadow: 0px 0px 10px 5px rgba(204, 153, 13, 0.493);
+	}
+
+	.item-text {
+		font-size: 1.5rem;
+		font-weight: 800;
 	}
 
 	.main-heading {
