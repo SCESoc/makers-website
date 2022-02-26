@@ -1,4 +1,5 @@
 # Makers Club Website
+Official Website for SCESoc's 'Makers Club' with Project Showcase Pages
 
 # create-svelte
 
