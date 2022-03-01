@@ -69,5 +69,8 @@
 	}
 
 	@media (min-width: 720px) {
+		.title-footer {
+			padding: 1rem 0 1.5rem;
+		}
 	}
 </style>
