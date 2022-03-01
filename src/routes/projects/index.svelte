@@ -65,12 +65,12 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		padding: 1rem 1rem 1.5rem;
+		padding: 1rem 0 1.5rem;
 	}
 
 	@media (min-width: 720px) {
 		.title-footer {
-			padding: 1rem 0 1.5rem;
+			padding: 1rem 1rem 1.5rem;
 		}
 	}
 </style>
