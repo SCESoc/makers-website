@@ -7,6 +7,6 @@ export const menu = [
 	{
 		name: 'Projects',
 		path: '/projects',
-		active: (url: string) => url.startsWith('/projects'),
+		active: (url: string) => url.startsWith('/projects') || url === ('/add-project'),
 	}
 ];
