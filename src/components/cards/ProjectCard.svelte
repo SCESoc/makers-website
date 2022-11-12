@@ -13,8 +13,6 @@
 		(projectData.logo.startsWith('http')
 			? projectData.logo
 			: `${base}/images/projects/${projectData.logo}`);
-
-	console.log(logo);
 </script>
 
 <a sveltekit:prefetch href={`${base}/projects/${project.slug}`}>
