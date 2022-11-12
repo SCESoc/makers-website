@@ -12,9 +12,11 @@
 	export let project: Project;
 	let projectData = project.metadata;
 	let startDate = projectData.startDate && dayjs(projectData.startDate).format('MMMM YYYY');
-	let logo = projectData.logo.startsWith('http')
-		? projectData.logo
-		: `${base}/images/projects/${projectData.logo}`;
+	let logo =
+		projectData.logo &&
+		(projectData.logo.startsWith('http')
+			? projectData.logo
+			: `${base}/images/projects/${projectData.logo}`);
 </script>
 
 <svelte:head>
